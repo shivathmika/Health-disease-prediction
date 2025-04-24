@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lung Cancer Prediction Results</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8fbff;
+            text-align: center;
+            padding: 2rem;
+        }
+        nav {
+            background-color: #007bff;
+            padding: 1rem;
+        }
+        nav a {
+            color: white;
+            margin: 0 1rem;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .result-box {
+            margin-top: 2rem;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            display: inline-block;
+            max-width: 700px;
+        }
+        .result-item {
+            margin-bottom: 2rem;
+        }
+        .result-item img {
+            max-width: 300px;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        h2, h3 {
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/dashboard">Home</a>
+        <a href="/diabetes">Diabetes</a>
+        <a href="/breast-cancer">Breast Cancer</a>
+        <a href="/lung-cancer">Lung Cancer</a>
+        <a href="/logout">Logout</a>
+    </nav>
+
+    <div class="result-box">
+        <h2>Prediction Results</h2>
+        {% for filename, result in results %}
+        <div class="result-item">
+            <img src="{{ url_for('static', filename='uploads/' + filename) }}" alt="Uploaded Report">
+            <h3>{{ filename }}</h3>
+            <p><strong>{{ result }}</strong></p>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

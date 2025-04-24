@@ -1,0 +1,2 @@
+DATA_PATH =  "/content/drive/MyDrive/Health Disease Risk assessment/LND - experimentation/input/all_patches.hdf5"
+SAVE_MODEL_PATH = "/content/drive/MyDrive/Health Disease Risk assessment/LND - experimentation/Models/"
