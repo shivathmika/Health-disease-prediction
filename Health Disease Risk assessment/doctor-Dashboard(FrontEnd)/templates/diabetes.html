@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diabetes Prediction</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8fbff;
+            margin: 0;
+            padding: 2rem;
+            color: #333;
+        }
+        nav {
+            background-color: #007bff;
+            padding: 1rem 2rem;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 1rem;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        h2 {
+            color: #007bff;
+            text-align: center;
+        }
+        form {
+            background: white;
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        textarea, input[type="file"] {
+            width: 100%;
+            margin-top: 1rem;
+            padding: 0.75rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="/dashboard">Home</a>
+    <a href="/diabetes">Diabetes</a>
+    <a href="/breast-cancer">Breast Cancer</a>
+    <a href="/lung-cancer">Lung Cancer</a>
+    <a href="/logout">Logout</a>
+</nav>
+
+<h2>Diabetes Risk Prediction</h2>
+
+<form action="/predict/diabetes" method="POST" enctype="multipart/form-data">
+    <label for="data">    Upload a CSV file containing the patient's test results. The AI will analyze the data and predict the likelihood of diabetes.
+    </label>
+    <textarea name="data" id="data" rows="6" placeholder="Glucose, BMI, Age, ... (comma-separated)"></textarea>
+
+    <p style="text-align:center; margin: 1rem;">— OR —</p>
+
+    <label for="file">Upload CSV File:</label>
+    <input type="file" name="file" accept=".csv">
+
+    <input type="submit" value="Predict">
+</form>
+
+</body>
+</html>
