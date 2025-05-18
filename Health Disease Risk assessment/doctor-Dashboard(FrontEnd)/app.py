@@ -41,7 +41,7 @@ def login():
         username = request.form['username']
         password = request.form['password']
         
-        if(username == 'vvardh15' and password == 'Optum@123'):
+        if(username == 'shivathmika.chiliveru1908@gmail.com' and password == 'Optum@123'):
             return redirect(url_for('dashboard'))
         
         else:
